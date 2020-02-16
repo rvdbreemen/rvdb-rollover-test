@@ -27,8 +27,8 @@ void loop() {
 
   int32_t t=0;
   uint16_t timer = 65000;
-  uint16_t timer_interval = 53;
-  uint16_t timer_tick = 3;
+  uint16_t timer_interval = 42;
+  uint16_t timer_tick = 1;
   uint16_t timer_due = 0;
 
   timer_due = timer + timer_interval;
@@ -48,8 +48,7 @@ void loop() {
     }
 //    if ((timer_due - timer) & 0x8000) Serial.print(" MSB = 1 -- timer - overflow");
     t++;
-//    Serial.printf(" [%5d]", i);
-//    Serial.printf(" [%s]", DecimalToBinaryStringalToBin(i).c_str());
+//    Serial.printf(" [%s]", DecimalToBinaryStringalToBin(timer).c_str());
     Serial.println();
     delay(1000/30); 
   }
