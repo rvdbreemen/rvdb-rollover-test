@@ -27,18 +27,21 @@ void loop() {
 
   int32_t t=0;
   uint16_t timer = 65000;
-  uint16_t timer_interval = 42;
-  uint16_t timer_tick = 1;
+  uint16_t timer_interval = 89;
+  uint16_t timer_tick = 11;
   uint16_t timer_due = 0;
-
+  uint16_t i=0;
+  
   timer_due = timer + timer_interval;
   while (t<400) {
     timer += timer_tick;
-    Serial.printf("[%5d] [%5d] [%5d] [%5d] [%5d] [%5d]", t, timer, timer_due, timer_interval, (int16_t)(timer - timer_due), (uint16_t)(timer - timer_due));
+    i++;
+    Serial.printf("[%5d] [%5d] [%5d] [%5d] [%5d] [%5d] [%5d]", t, i, timer, timer_due, timer_interval, (int16_t)(timer - timer_due), (uint16_t)(timer - timer_due));
     if ((int16_t)(timer - timer_due) >= 0) 
     {
       Serial.printf(" timer due - timer [%5d] timer_due [5%d] timer_interval [%5d]", timer, timer_due, timer_interval);
       timer_due += timer_interval;
+      i=0;
       Serial.printf(" next: timer_due [%5d]", timer_due);
 // niet echt nodig volgens mij, maar je zou het verschil kunnen skippen...
 //      while ((int16_t)(timer - timer_due) >= 0)  {
